@@ -113,8 +113,8 @@ public class RatingsActivity extends AppCompatActivity {
                 }
                     RatingBar rBar = (RatingBar) findViewById(R.id.ratingBar3);
                     rBar.setRating((float) averageRating);
-                    TextView tvNumRatings = (TextView)findViewById(R.id.textView6);
-                    tvNumRatings.setText("(" + numRatings + ")");
+                    TextView tvNumRatings = (TextView)findViewById(R.id.textView5);
+                    tvNumRatings.setText(numRatings + " " + tvNumRatings.getText());
             }
 
             @Override
