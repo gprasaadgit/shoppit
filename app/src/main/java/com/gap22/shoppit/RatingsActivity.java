@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,6 +60,13 @@ public class RatingsActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         //Toast.makeText(RatingsActivity.this, "CurrenUser." + mAuth.getCurrentUser().getEmail(),
         //        Toast.LENGTH_SHORT).show();
+        Button saveButton = (Button) findViewById(R.id.button2);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnSaveClick(v);
+            }
+        });
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -114,7 +122,7 @@ public class RatingsActivity extends AppCompatActivity {
                     RatingBar rBar = (RatingBar) findViewById(R.id.ratingBar3);
                     rBar.setRating((float) averageRating);
                     TextView tvNumRatings = (TextView)findViewById(R.id.textView5);
-                    tvNumRatings.setText(numRatings + " " + tvNumRatings.getText());
+                    tvNumRatings.setText(numRatings + " " + "other shoppers said:");
             }
 
             @Override
